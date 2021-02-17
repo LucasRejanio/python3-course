@@ -1,0 +1,6 @@
+# Criar um programa que calcule a circunferência
+
+pi = 3.14159
+raio = 15
+
+print('Área do círculo: ', pi * raio ** 2)
