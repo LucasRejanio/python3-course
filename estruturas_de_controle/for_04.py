@@ -2,7 +2,6 @@
 
 
 # Exepmplo com dicionario
-
 produto = {
     'nome': 'Caneta chic',
     'preco': 14.99,

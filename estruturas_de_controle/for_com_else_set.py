@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 # Constant
 PALAVRAS_PROIBIDAS = {'futebol', 'religião', 'política'}
 textos = [
