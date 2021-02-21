@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-# utilizando modo de escrita do with para gerar um novo arquivo
+# utilizando modo de escrita do with para gerar
+# um novo arquivo txt a partir do csv
 with open('pessoas.csv') as arquivo:
     with open('pessoas.txt', 'w') as saida:
         for registro in arquivo:
