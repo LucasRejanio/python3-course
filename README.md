@@ -141,3 +141,27 @@ for n in nomes:
 else:
      print("Todos os nomes foram listados com sucesso")
 ```
+
+## Função
+Em Python, uma função é uma sequência de comandos que executa alguma tarefa e que tem um nome. A sua principal finalidade é nos ajudar a organizar programas em pedaços que correspondam a como imaginamos uma solução do problema.
+
+#### Tipos de parametro
+- **Posicional:** Parametros já esperados pela função sendo atribuidos por argumentos ordenados. 
+
+- **Nomeado:** Parametros já esperados pela função sendo atribuidos por argumentos orientados(fora de ordem). 
+
+Exemplo: 
+
+```py
+def tag_bloco(texto, classe='sucess', inline=False):
+    tag = 'span' if inline else 'div'
+    return f'<{tag} class="{classe}">{texto}</{tag}>'
+
+if __name__ == '__main__':
+    ## Posicional
+    print(tag_bloco('Incluiído com sucesso', 'info', True,))
+    # Nomeado
+    print(tag_bloco('inline', inline=True))
+    print(tag_bloco('falhou', classe='error'))
+    print(tag_bloco(classe='error', texto='falhou'))
+```
