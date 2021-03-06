@@ -206,3 +206,6 @@ print(mySum(10, 20))
 
 - Operadores
 Usamos dois operadores * (para tuplas) e ** (para dicionários).
+
+## Callable ()
+O método callable () retorna True se o objeto passado pode ser chamado/executado. Caso contrário, retorna False.
