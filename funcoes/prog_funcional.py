@@ -14,7 +14,6 @@ def boa_tarde():
     print('Boa tarde!')
 
 
-
 if __name__ == '__main__':
     executa(bom_dia)
     executa(boa_tarde)
