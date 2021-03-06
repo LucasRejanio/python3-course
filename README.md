@@ -165,3 +165,44 @@ if __name__ == '__main__':
     print(tag_bloco('falhou', classe='error'))
     print(tag_bloco(classe='error', texto='falhou'))
 ```
+## Packing and Unpacking 
+Contexto 
+Considere uma situação em que temos uma função que recebe quatro argumentos. Queremos fazer uma chamada para esta função e temos uma lista de tamanho 4 conosco que contém todos os argumentos para a função. Se simplesmente passarmos uma lista para a função, a chamada não funciona.
+
+#### Unpacking
+Podemos usar * para descompactar a lista de forma que todos os elementos dela possam ser passados ​​como parâmetros diferentes.
+
+```py
+# A sample function that takes 4 arguments
+# and prints the,
+def fun(a, b, c, d):
+    print(a, b, c, d)
+ 
+# Driver Code
+my_list = [1, 2, 3, 4]
+ 
+# Unpacking list into four arguments
+fun(*my_list)
+```
+
+#### packing
+Quando não sabemos quantos argumentos precisam ser passados ​​para uma função python, podemos usar o Empacotamento para empacotar todos os argumentos em uma tupla. 
+
+```py
+
+
+# A Python program to demonstrate use
+# of packing
+ 
+# This function uses packing to sum
+# unknown number of arguments
+def mySum(*args):
+    return sum(args)
+ 
+# Driver code
+print(mySum(1, 2, 3, 4, 5))
+print(mySum(10, 20))
+```
+
+- Operadores
+Usamos dois operadores * (para tuplas) e ** (para dicionários).
