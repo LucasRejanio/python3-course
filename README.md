@@ -4,6 +4,20 @@ Esse repositorio tem como objetivo armazenar todo o material desenvolvido no cur
 
 - Linkd do curso: https://www.udemy.com/course/curso-python-3-completo/
 
+## Sumário
+- [Tipos](#tipos)
+- [Operadores matemáticos](#operadores-matemáticos)
+- [Dicionário](#dicionário)
+- [Tupla](#tupla)
+- [Operadores lógicos](#operadores-lógicos)
+- [if e else](#if-e-else)
+- [Estrutura de repetição](#estrutura-de-repetição)
+- [Função](#função)
+- [Packing and Unpacking](#packing-and-unpacking)
+- [Callable](#callable)
+- [Decorator](#decorator)
+- [Modularização](#modularização)
+
 ## Tipos
 Python é uma linguagem de tipos dinâmicos, ou seja, não é necessário fazer casting como em Java, Pascal ou C.
 
@@ -150,7 +164,7 @@ Em Python, uma função é uma sequência de comandos que executa alguma tarefa 
 
 - **Nomeado:** Parametros já esperados pela função sendo atribuidos por argumentos orientados(fora de ordem). 
 
-Exemplo: 
+- Exemplo: 
 
 ```py
 def tag_bloco(texto, classe='sucess', inline=False):
@@ -209,3 +223,85 @@ Usamos dois operadores * (para tuplas) e ** (para dicionários).
 
 ## Callable ()
 O método callable () retorna True se o objeto passado pode ser chamado/executado. Caso contrário, retorna False.
+
+## Decorator
+Um decorador é um padrão de design em Python que permite a um usuário adicionar nova funcionalidade a um objeto existente sem modificar sua estrutura. Os decoradores geralmente são chamados antes da definição de uma função que você deseja decorar.
+
+- Exemplo: 
+```py
+def log(funcao):
+    def decorator(*args, **kwargs):
+        print(f'Inicio da chamada da função: {funcao.__name__}')
+        print(f'args: {args}')
+        print(f'kwargs: {kwargs}')
+        resultado = funcao(*args, **kwargs)
+        print(f'resultado: {resultado}')
+        return resultado
+    return decorator
+
+
+@log
+def soma(x, y):
+    return x + y
+
+
+@log
+def sub(x, y):
+    return x - y
+
+
+if __name__ == '__main__':
+    soma(5, 7)
+    sub(5, 7)
+```
+
+## Modularização
+Pacotes nada menos são do que uma pasta com diversos módulos dentro dela. Abaixo, uma estrutura parecida com o que expliquei acima:
+
+```console
+.
++-- pacotes
+¦   +-- calculos_basicos
+¦   ¦   +-- __init__.py
+¦   +-- calculos_estatisticos
+¦   ¦   +-- __init__.py
+¦   +-- graficos
+¦   ¦   +-- __init__.py
+¦   +-- interface
+¦       +-- __init__.py
++-- programa.py
+```
+
+Acima, temos um diretório raiz, nele temos nosso programa "programa.py", e a pasta (pacote) chamada pacotes. Dentro dessa pasta temos 4 outras pastas, "calculos_basicos", "calculos_estatisticos", "graficos" e "interface" e dentro de cada uma temos um arquivo chamado "__init__.py". O nome do arquivo dessa forma é necessário para o Python entender que cada pasta é um pacote. 
+
+#### Exemplo na prática
+
+```console
++-- pacotes
+¦   +-- calculos_basicos
+¦   ¦   +-- __init__.py
+¦   ¦   +-- raiz.py
+```
+
+```py
+# raiz.py
+
+class Raiz:
+    def __init__(self, x, y):
+        self.raiz = x ** (1/y)
+
+    def __str__(self):
+        return f'{self.raiz}'
+```
+
+```py
+# programa.py
+
+from pacotes.calculos_basicos import raiz
+
+a = raiz.Raiz(4, 2)
+print(a)
+
+# Retorna
+# 2.0
+```
