@@ -17,7 +17,7 @@ Esse repositorio tem como objetivo armazenar todo o material desenvolvido no cur
 - [Callable](#callable)
 - [Decorator](#decorator)
 - [Modularização](#modularização)
-- [Programação POO](#programacao-orientada-a-objetos)
+- [POO](#poo)
 
 ## Tipos
 Python é uma linguagem de tipos dinâmicos, ou seja, não é necessário fazer casting como em Java, Pascal ou C.
@@ -307,7 +307,7 @@ print(a)
 # 2.0
 ```
 
-## Programação orientada a objetos
+## POO
 
 #### Classe vs Objeto
 Uma classe é uma estrutura que abstrai um conjunto de objetos com características similares. Uma classe define o comportamento de seus objetos - através de métodos - e os estados possíveis destes objetos - através de atributos.
