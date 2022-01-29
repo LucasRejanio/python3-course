@@ -1,4 +1,4 @@
-from config import Env
+from config.env import Env
 
 stack = 'prod-virginia'
 
